@@ -1,4 +1,4 @@
-import { aoc_part1, aoc_part2 } from './src/aoc01';
+import { aoc_part1, aoc_part2 } from './src/aoc02';
 
 console.time('execution_complete');
 
