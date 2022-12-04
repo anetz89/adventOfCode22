@@ -25,7 +25,7 @@ function trippleLetter(a: string, i: number, input: string[]) {
 function findCommonLetters(a: string, b: string, c?: string): string[] {
     if (c) { return findCommonLetters(findCommonLetters(a, b).join(), c); }
 
-    return a.split('').filter(a => b.indexOf(a) > -1);
+    return a.split('').filter(a => b.includes(a));
 }
 
 function char2value(c: string): number {
