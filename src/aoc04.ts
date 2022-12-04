@@ -18,9 +18,10 @@ function contain(a: number[][]): boolean {
 }
 
 function overlap(a: number[][]): boolean {
-    const elf1arr = Array.from({length: a[0][1] - a[0][0] + 1}, (_, index) => index + a[0][0]);
-    const elf2arr = Array.from({length: a[1][1] - a[1][0] + 1}, (_, index) => index + a[1][0]);
+    return getRange(a[0]).filter(elem => getRange(a[1]).includes(elem)).length > 0;
+}
 
-    return elf1arr.filter(a => elf2arr.includes(a)).length > 0;
+function getRange(a: number[]): number[] { 
+    return Array.from({length: a[1] - a[0] + 1}, (_, index) => index + a[0]);
 }
 
