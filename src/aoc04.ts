@@ -18,10 +18,5 @@ function contain(a: number[][]): boolean {
 }
 
 function overlap(a: number[][]): boolean {
-    return getRange(a[0]).filter(elem => getRange(a[1]).includes(elem)).length > 0;
+    return !(a[0][0] > a[1][1] || a[0][1] < a[1][0])
 }
-
-function getRange(a: number[]): number[] { 
-    return Array.from({length: a[1] - a[0] + 1}, (_, index) => index + a[0]);
-}
-
